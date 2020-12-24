@@ -1,0 +1,409 @@
+
+//--------------------------------** RESET CSS **--------------------------------//
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video 
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	vertical-align: baseline
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section 
+	display: block
+
+body 
+	line-height: 1
+	overflow-x: hidden
+
+ol, ul 
+	list-style: none
+
+blockquote, q 
+	quotes: none
+
+blockquote::before,
+blockquote::after,
+q::before, 
+q::after
+	content: ''
+	content: none
+
+table 
+	border-collapse: collapse
+	border-spacing: 0
+
+img
+    max-width: 100%
+    height: auto  
+
+
+*, 
+*::before,
+*::after
+    box-sizing: border-box
+    position: relative
+	
+
+//--------------------------------** font family **--------------------------------//
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+*
+	font-family: 'Oswald'
+	// border: solid 1px black !important
+
+//--------------------------------** var CSS **--------------------------------//
+
+$color_blue: #282f44 
+$color_brown: #e6af2e 
+$color_yellow: #f5d061 
+$color_white: #ececec 
+$color_dark: #343a40
+
+//--------------------------------** navbar **--------------------------------//
+nav.navbar-bg
+	background-color: $color_white 
+	transition: 1s
+	& .navbar-logo
+		color: $color_dark !important
+	& .nav-link
+		color: $color_dark !important
+
+.nav-item
+	width: 100px
+	text-align: center
+
+.nav-link
+	padding: 15px 100px
+	&:hover
+		color: $color_brown !important
+
+//--------------------------------** header **--------------------------------//
+
+header
+	background-color: $color_blue
+	text-align: center
+
+	.header-logo
+		max-width: 300px
+		padding: 250px 0px
+
+	.header-bottom
+		position: absolute
+		bottom: -1px
+		right: -20px
+		animation: upin 2s both
+
+		@keyframes upin
+			0%
+				bottom: -100px
+			100%
+				bottom: -1px
+
+	.explore
+		position: absolute
+		bottom: 30px
+		left: 50%
+		transform: translateX(-50%)
+		color: $color_yellow
+		opacity: 1
+		transition: 1s
+		&::after
+			display: block
+			content: "≫"
+			transform: rotate(90deg)
+			margin-top: 10px
+
+	.explore-transparent
+		opacity: 0
+
+//--------------------------------** section#about **--------------------------------//
+
+section#about
+	padding: 60px 0px
+	background-color: $color_brown
+	.about-bottom
+		position: absolute
+		top: 99%
+		width: 70%
+		z-index: 3
+	#cross
+		position: absolute
+		&:before, &:after
+			content: " "
+			display: block
+			position: absolute
+			width: 60px
+			height: 10px
+			background-color: #FFFFFF
+			left: 50%
+			top: 50%
+			transform: rotate(45deg)
+		&:after
+			transform: rotate(-45deg)
+	#cat
+		width: 300px
+		position: absolute
+		bottom: -5px
+		left: 85%
+		transform: translateX(-50%)
+	.container
+		transform: rotate(15deg) scale(0.9)
+		.row
+			height: 150px
+
+			.text1
+				font-size: 70px
+			.text2
+				font-size: 40px
+			.text3
+				font-size: 50px
+				margin-top: 100px
+
+			.btn-box
+				height: 100%
+
+				a
+					top: 50%
+					left: 50%
+					transform: translate(-50%,-50%) rotate(10deg)
+
+			.tri
+				transform: rotate(-10deg)
+			.tri1
+				width: 350px
+			.tri2
+				width: 20px
+				margin-left: 20px
+			.tri3
+				width: 150px
+				margin-left: 70%
+			.tri4
+				width: 70px
+				margin-left: 100%
+			.tri5
+				width: 80px
+				margin-left: 100%
+
+//--------------------------------** section#service **--------------------------------//
+
+section#service
+	padding: 60px 0px
+	background-color: $color_white
+	.row
+		h2
+			font-size: 30px
+		.col-sm-4
+			text-align: center
+			img
+				width: 60%
+			h3
+				font-size: 24px
+
+//--------------------------------** section#works **--------------------------------//
+
+section#works
+	padding: 60px 0px
+	background-color: $color_white
+	.works-bottom
+		position: absolute
+		z-index: 20
+		top: 100%
+		width: 100%
+			
+	.container
+		.row
+			.col-md-12.p-0
+				h2
+					font-size: 30px
+		.row
+			.works-big-pic
+				cursor: pointer
+
+				&::after
+					content: ""
+					display: block
+					position: absolute
+					top: 0
+					left: 0
+					right: 0
+					bottom: 0
+					background-color: rgba(#000000,0.7)
+					opacity: 0
+					transition: 0.7s
+
+				img
+					width: 100%
+					height: 460px
+
+				.works-big-content
+					position: absolute
+					top: 50%
+					left: 50%
+					transform: translate(-50%,-50%)
+					color: $color_white
+					z-index: 10
+					opacity: 0
+					transition: 0.7s
+
+				&:hover
+					&::after,.works-big-content
+						opacity: 1
+						
+
+			.col-md-6.p-0
+				overflow: hidden
+				.row
+					.works-pic
+						cursor: pointer
+						
+						&::after
+							content: ""
+							display: block
+							position: absolute
+							top: 0
+							left: 0
+							right: 0
+							bottom: 0
+							background-color: rgba(#000000,0.7)
+							opacity: 0
+							transition: 0.7s
+
+						img
+							width: 100%
+							height: 230px
+
+						.works-content
+							position: absolute
+							top: 50%
+							left: 50%
+							transform: translate(-50%,-50%)
+							color: $color_white
+							z-index: 10
+							opacity: 0
+							transition: 0.7s
+					
+						&:hover
+							&::after,.works-content
+								opacity: 1
+			
+//--------------------------------** section#contact **--------------------------------//
+
+section#contact
+	padding: 250px 0px
+	background-color: $color_blue
+	color: $color_white
+
+	.cat
+		position: absolute
+		bottom: -40px
+		width: 150px
+		right: 0
+		transition: 0.5s
+
+	.cat#cat_blue
+		right: 25%
+
+	.cat#cat_grey
+		right: 15%
+
+	.cat#cat_yellow
+		right: 5%
+
+	.jump
+		bottom: 0
+		transition: 0.5s
+
+	.mailbox
+		.mail-bg
+			transform: rotate(10deg)
+		.mail-body
+			position: absolute
+			top: 0			
+			padding: 50px 100px
+			padding-left: 40px
+			background-color: $color_white
+			color: $color_blue
+			label
+				padding-top: 20px
+
+			input,textarea
+				width: 350px
+				display: block
+	.mail-text
+		padding-left: 70px
+
+		h2
+			margin-top: 30px
+			font-size: 30px
+		p
+			line-height: 1.8
+			font-size: 20px
+
+//--------------------------------** footer **--------------------------------//
+
+footer
+	background-color: $color_brown
+	text-align: center
+	padding: 50px 0px
+	.container-fluid
+		img
+			width: 20%
+//--------------------------------** 992 **--------------------------------//
+@media (max-width:992px)
+	section#about
+		#cat
+			width: 20%
+		.container
+			.row
+				.text1
+					font-size: 60px
+				.text2
+					font-size: 30px
+				.text3
+					font-size: 40px
+	section#contact
+		padding: 100px 0px
+		.cat
+			width: 20%
+		.mail-text
+			margin-top: 100px
+	footer
+		.container-fluid
+			img
+				width: 30%
+//--------------------------------** 576 **--------------------------------//
+@media (max-width:576px)
+	section#about
+		#cat
+			display: none
+		.container
+			.row
+				.text1
+					font-size: 50px
+				.text2
+					font-size: 20px
+				.text3
+					font-size: 30px
+	section#contact
+		padding: 100px 0px
+		.cat
+			display: none
+		.mail-text
+			margin-top: 100px
+	footer
+		.container-fluid
+			img
+				width: 50%

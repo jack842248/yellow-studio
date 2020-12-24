@@ -1,0 +1,193 @@
+doctype html
+html(lang="zh-tw")
+head
+    //------------------------------使用的字符編碼------------------------------//
+    meta(charset='UTF-8')
+
+
+    //------------------------------優先使用IE最新版本和Chrome------------------------------//
+    meta(http-equiv='X-UA-compatible' content='ie=edge,chrome=1')
+
+
+    //------------------------------符合各裝置最佳預覽------------------------------//
+    meta(name='viewport'
+        content='width=device-width'
+        height='device-height'
+        initial-scale='1'
+        minimum-scale='1'
+        maximum-scale='1'
+        user-scalable='no')
+
+
+    //------------------------------網頁頁面資訊------------------------------//
+    title 網頁標題
+    meta(name='description' content='網頁描述')
+    meta(name='author' content='網頁作者')
+
+
+    //------------------------------頁面在Facebook、Plurk、LINE資訊------------------------------//
+    meta(property='og:title' content='標題')
+    meta(property='og:description' content='描述')
+    meta(property='og:type' content='類型')
+    meta(property='og:url' content='連結網址')
+    meta(property='og:image' content='顯示圖片')
+    meta(property='og:site_name' content='帳號名稱')
+
+
+    //------------------------------頁面在Google+、Pinterest、LinkedIn資訊------------------------------//
+    meta(itemprop='name' content='顯示內容')
+    meta(itemprop='description' content='描述')
+    meta(itemprop='image' content='顯示圖片')
+
+
+    //------------------------------頁面在twitter資訊------------------------------//
+    meta(name='twitter:title' content='標題')
+    meta(name='twitter:description' content='描述')
+    meta(name='twitter:card' content='類型')
+    meta(name='twitter:image' content='顯示圖片')
+    meta(name='twitter:site' content='帳號名稱')
+
+
+    //------------------------------在各瀏覽器上網址的顯示------------------------------//
+    link(rel='canonical' href='網址')
+    link(rel='icon' href='images/favicon.ico')
+
+    
+    //------------------------------讓連結都以新開視窗方式打開------------------------------//
+    //- base(target='_blank')
+
+
+    //------------------------------CSS樣式連結------------------------------//
+
+    link(rel='stylesheet' type="text/css" href='css/bootstrap.css')
+    link(href='https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap' rel='stylesheet')
+    link(rel='stylesheet' type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css')
+    link(rel='stylesheet' type="text/css" href='css/all.css')
+    
+    
+
+body
+    nav.navbar.navbar-expand-sm.navbar-dark.border-bottom.fixed-top
+        .container
+            h1#up_top
+                a.navbar-brand.navbar-logo(href='#') Yellow Studio
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#menu')
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse#menu
+                ul.navbar-nav.ml-auto
+                    li.nav-item
+                        a.nav-link(href='#about') About
+                    li.nav-item
+                        a.nav-link(href='#works') Works
+                    li.nav-item
+                        a.nav-link(href='#contact') Contact
+
+    header
+        .container-fluid
+            img.header-logo(src="images/w_icon.svg")
+            img.header-bottom(src="images/m_index.svg")
+            .explore EXPLORE
+
+    section#about
+        img.about-bottom(src="images/m_about.svg")
+        #cross
+        img#cat(src="http://awiclass.monoame.com/catpic/cat_left.png")
+        .container
+            .row
+                .col-sm-4
+                .col-sm-8
+                    img.tri.tri1(src="images/w_tri1.svg")
+                    h2.text1 WORKS IN YELLOW
+            .row
+                .col-sm-4
+                    img.tri.tri2(src="images/w_tri2.svg")
+                .col-sm-8
+                    img.tri.tri3(src="images/w_tri3.svg")
+                    h3.text2 YELLOW STUDIO-Website Design / Development<br>Interactive Art Design
+            .row
+                .col-sm-8
+                    h4.text3 430 MORE SUCCESS CASES
+            .row
+                .col-sm-4.btn-box
+                    a.btn.btn-lg.btn-light.btn-outline-dark(href="#works") MORE STORY
+                    img.tri.tri4(src="images/w_tri4.svg")
+                .col-sm-4
+                    img.tri.tri5(src="images/w_tri5.svg")
+                .col-sm-4
+    section#service
+        .container
+            .row
+                .col-sm-12
+                    h2 SERVICE
+            .row
+                .col-sm-4
+                    img(src="images/w_service_icon1.svg")
+                    h3 CI/VI Design
+                .col-sm-4
+                    img(src="images/w_service_icon2.svg")
+                    h3 MotionGraphic
+                .col-sm-4
+                    img(src="images/w_service_icon3.svg")
+                    h3 Web Development
+
+    section#works
+        .works-bottom
+            img(src="images/m_works.svg")
+        .container#app
+            .row
+                .col-md-12.p-0
+                    h2  WORKS
+            .row
+                .col-md-6.works-big-pic.p-0
+                    img(v-bind:src="works[1].img")
+                    .works-big-content
+                        h3 {{works[1].name}}
+                        h4(v-html="works[1].content.substr(0,40)")
+                .col-md-6.p-0
+                    .row
+                        .col-sm-6.works-pic.p-0(v-for="work in works.slice(2,6)")
+                            img(v-bind:src="work.img")
+                            .works-content
+                                h3 {{work.name}}
+
+    section#contact
+        img.cat#cat_blue(src="images/cat_blue_cat.png")
+        img.cat#cat_grey(src="images/cat_grey_cat.png")
+        img.cat#cat_yellow(src="images/cat_yellow_cat.png")
+        .container 
+            .row     
+                .col-lg-6
+                    .mailbox
+                        .mail-bg
+                            img(src="images/w_mail_cover.svg")
+                        .mail-body
+                            h5 Dear Yellow Studio 
+                            label(for="name") Name
+                            input(id="name" type="text")
+                            label(for="email") Email
+                            input(id="email" type="email")
+                            label(for="content") Content
+                            textarea(id="content" rows="5" cols="50")
+                .col-lg-6.mail-text
+                    h2 CONTACT
+                    br
+                    p If you have any question about us,<br>Don`t hestitate to contact us !
+                    br
+                    br
+                    p YELLOWSTUDIO@gmail.com<br>ADDRESS: TAIWAN, TAIPEI , XORO Road<br>Phone: 02-12345678
+    footer
+        .container-fluid
+            img(src="images/w_icon_black.svg")
+
+
+
+
+
+
+    //------------------------------JS連結檔------------------------------//
+    script(src='js/jquery.js')
+    script(src='js/bootstrap.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js')
+    script(src='js/all.js')
+    
