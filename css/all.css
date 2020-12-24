@@ -315,9 +315,11 @@ section#works .container .row .works-big-pic::after {
   transition: 0.7s;
 }
 
-section#works .container .row .works-big-pic img {
+section#works .container .row .works-big-pic .big-img {
   width: 100%;
-  height: 460px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 section#works .container .row .works-big-pic .works-big-content {

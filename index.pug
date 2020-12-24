@@ -20,36 +20,36 @@ head
 
 
     //------------------------------網頁頁面資訊------------------------------//
-    title 網頁標題
-    meta(name='description' content='網頁描述')
-    meta(name='author' content='網頁作者')
+    title Yellow Studio 設計工作室
+    meta(name='description' content='Yellow Studio 設計工作室')
+    meta(name='author' content='黃俊傑')
 
 
     //------------------------------頁面在Facebook、Plurk、LINE資訊------------------------------//
-    meta(property='og:title' content='標題')
-    meta(property='og:description' content='描述')
-    meta(property='og:type' content='類型')
-    meta(property='og:url' content='連結網址')
+    meta(property='og:title' content='Yellow Studio 設計工作室')
+    meta(property='og:description' content='Yellow Studio 設計工作室網頁')
+    meta(property='og:type' content='website')
+    meta(property='og:url' content='https://jack842248.github.io/yellow-studio/')
     meta(property='og:image' content='顯示圖片')
-    meta(property='og:site_name' content='帳號名稱')
+    meta(property='og:site_name' content='jack842248')
 
 
     //------------------------------頁面在Google+、Pinterest、LinkedIn資訊------------------------------//
-    meta(itemprop='name' content='顯示內容')
-    meta(itemprop='description' content='描述')
+    meta(itemprop='name' content='Yellow Studio 設計工作室')
+    meta(itemprop='description' content='Yellow Studio 設計工作室網頁')
     meta(itemprop='image' content='顯示圖片')
 
 
     //------------------------------頁面在twitter資訊------------------------------//
-    meta(name='twitter:title' content='標題')
-    meta(name='twitter:description' content='描述')
-    meta(name='twitter:card' content='類型')
+    meta(name='twitter:title' content='Yellow Studio 設計工作室')
+    meta(name='twitter:description' content='Yellow Studio 設計工作室網頁')
+    meta(name='twitter:card' content='website')
     meta(name='twitter:image' content='顯示圖片')
-    meta(name='twitter:site' content='帳號名稱')
+    meta(name='twitter:site' content='jack842248')
 
 
     //------------------------------在各瀏覽器上網址的顯示------------------------------//
-    link(rel='canonical' href='網址')
+    link(rel='canonical' href='https://jack842248.github.io/yellow-studio/')
     link(rel='icon' href='images/favicon.ico')
 
     
@@ -139,13 +139,13 @@ body
                     h2  WORKS
             .row
                 .col-md-6.works-big-pic.p-0
-                    img(v-bind:src="works[1].img")
+                    img.big-img(v-bind:src="works[0].img")
                     .works-big-content
-                        h3 {{works[1].name}}
-                        h4(v-html="works[1].content.substr(0,40)")
+                        h3 {{works[0].name}}
+                        h4(v-html="works[0].content.substr(0,40)")
                 .col-md-6.p-0
                     .row
-                        .col-sm-6.works-pic.p-0(v-for="work in works.slice(2,6)")
+                        .col-sm-6.works-pic.p-0(v-for="work in works.slice(1,5)")
                             img(v-bind:src="work.img")
                             .works-content
                                 h3 {{work.name}}
